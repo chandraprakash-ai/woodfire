@@ -1,0 +1,114 @@
+.reviews {
+    background: linear-gradient(135deg, #2a2018 0%, var(--color-bg) 100%);
+    position: relative;
+    padding: var(--spacing-xxl) 0;
+}
+
+.title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-gold);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 80px;
+    height: 3px;
+    background-color: var(--color-gold);
+    transform: translateX(-50%);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: var(--spacing-lg);
+    border-radius: 4px;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-gold);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.quoteIcon {
+    font-size: 4rem;
+    color: var(--color-gold);
+    opacity: 0.1;
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    font-family: serif;
+    line-height: 1;
+}
+
+.stars {
+    color: var(--color-gold);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.text {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: auto;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-gold);
+}
+
+.name {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

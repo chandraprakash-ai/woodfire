@@ -1,0 +1,132 @@
+.menuPreview {
+    background-color: var(--color-bg);
+    padding: var(--spacing-xxl) 0;
+    position: relative;
+    /* Ensure containment for absolute children */
+}
+
+.title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-gold);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 80px;
+    height: 3px;
+    background-color: var(--color-gold);
+    transform: translateX(-50%);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+.card {
+    position: relative;
+    height: 400px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: all 0.4s ease;
+    /* For future use if needed */
+}
+
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.card:hover .cardImage {
+    transform: scale(1.1);
+}
+
+.cardOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    transition: background 0.3s ease;
+}
+
+.card:hover .cardOverlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.2));
+}
+
+.cardContent {
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.card:hover .cardContent {
+    transform: translateY(0);
+}
+
+.cardTitle {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    color: var(--color-gold);
+    margin-bottom: var(--spacing-xs);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.cardDesc {
+    font-size: 1rem;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+    opacity: 0.9;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.link {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--color-accent-light);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease 0.1s;
+}
+
+.card:hover .link {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.link:hover {
+    color: var(--color-gold);
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

@@ -1,0 +1,125 @@
+.gallery {
+    background: linear-gradient(135deg, var(--color-bg) 0%, #2a2018 100%);
+    padding: var(--spacing-xxl) 0;
+    position: relative;
+    /* Ensure containment for absolute children */
+}
+
+.title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-gold);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 80px;
+    height: 3px;
+    background-color: var(--color-gold);
+    transform: translateX(-50%);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+    grid-auto-flow: dense;
+}
+
+.item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+/* Masonry Effect: Some items span 2 columns or rows */
+.item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.item:nth-child(4) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    display: block;
+}
+
+.item:hover .image {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item:hover .overlay {
+    opacity: 1;
+}
+
+.caption {
+    color: var(--color-gold);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    text-align: center;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.item:hover .caption {
+    transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .item:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .item:nth-child(2) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .item:nth-child(3) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .item:nth-child(4) {
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+}

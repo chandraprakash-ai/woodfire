@@ -1,0 +1,121 @@
+.about {
+    background-color: var(--color-bg);
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    /* Full width/height control */
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+.imageWrapper {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.about:hover .image {
+    transform: scale(1.05);
+}
+
+.content {
+    padding: var(--spacing-xl) var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-bg);
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--color-gold);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-gold);
+}
+
+.text {
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.8;
+    opacity: 0.9;
+    max-width: 600px;
+}
+
+.featureList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.featureItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    font-weight: 500;
+    color: var(--color-text);
+    font-size: 1.1rem;
+}
+
+.icon {
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50%;
+    background-color: rgba(212, 175, 55, 0.05);
+}
+
+/* Desktop Styles */
+@media (min-width: 992px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        min-height: 700px;
+    }
+
+    .imageWrapper {
+        height: 100%;
+        order: 2;
+        /* Image on the right */
+    }
+
+    .content {
+        padding: var(--spacing-xxl);
+        order: 1;
+    }
+
+    .title {
+        font-size: 4rem;
+    }
+}

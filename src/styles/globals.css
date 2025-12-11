@@ -1,23 +1,16 @@
-:root {
-  /* Color Palette - Dark & Moody */
-  --color-bg: #121212;
-  --color-text: #E0E0E0;
-  --color-accent: #047857;
-  /* Emerald 700 - Primary Accent (Buttons, etc.) */
-  --color-accent-light: #D1FAE5;
-  /* Emerald 100 - Text Accent */
-  --color-cta: #059669;
-  /* Emerald 600 - CTA Buttons */
-  --color-gold: #D4AF37;
-  /* Metallic Gold */
-  --color-white: #FFFFFF;
-  --color-error: #EF4444;
-  --color-success: #10B981;
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap');
 
-  /* Glassmorphism */
-  --color-card-bg: rgba(255, 255, 255, 0.05);
-  --color-border: rgba(212, 175, 55, 0.3);
-  --glass-blur: 10px;
+:root {
+  /* Color Palette */
+  --color-bg: #F8F3ED;
+  --color-text: #2C1F18;
+  --color-accent: #5A3E36;
+  --color-cta: #2F6B3E;
+  --color-gold: #C9A24B;
+  --color-white: #FFFFFF;
+  --color-error: #D32F2F;
+  --color-success: #388E3C;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -26,6 +19,10 @@
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
   --spacing-xxl: 5rem;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
 
   /* Layout */
   --container-width: 1200px;
@@ -44,6 +41,7 @@ html {
 }
 
 body {
+  font-family: var(--font-body);
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
@@ -56,11 +54,10 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: var(--spacing-sm);
-  color: var(--color-gold);
-  /* Headings in Gold */
 }
 
 p {
@@ -98,13 +95,6 @@ img {
 
 .section {
   padding: var(--spacing-xl) 0;
-}
-
-.glass {
-  background: var(--color-card-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--color-border);
 }
 
 @media (min-width: 768px) {

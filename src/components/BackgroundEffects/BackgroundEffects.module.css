@@ -1,0 +1,47 @@
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Allow clicks to pass through */
+    z-index: 0;
+    /* Behind everything */
+    overflow: hidden;
+}
+
+.smokeLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    /* Double width for seamless scrolling */
+    height: 100%;
+    background-image: url('/smoke-texture.png');
+    background-size: cover;
+    opacity: 0.15;
+    /* Subtle smoke */
+    animation: drift 60s linear infinite;
+    mix-blend-mode: screen;
+    /* Blends well with dark backgrounds */
+}
+
+.particleLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+@keyframes drift {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

@@ -1,0 +1,179 @@
+.reservation {
+    background-color: var(--color-bg);
+    position: relative;
+    padding: var(--spacing-xxl) 0;
+    background-image: url('/reservation-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.reservation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Dark overlay */
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+.title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-gold);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.description {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-text);
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+.form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: rgba(18, 18, 18, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: var(--spacing-xl);
+    border-radius: 4px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.formGroup {
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.row {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.row .formGroup {
+    flex: 1;
+}
+
+.form label {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--color-gold);
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.form input,
+.form select,
+.form textarea {
+    padding: 10px 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--color-white);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+    outline: none;
+    border-bottom-color: var(--color-gold);
+    background-color: transparent;
+}
+
+/* Custom Select Styling */
+.form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0 center;
+    background-size: 1em;
+}
+
+.form select option {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+.submitBtn {
+    width: auto;
+    min-width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 32px;
+    background-color: var(--color-gold);
+    color: var(--color-bg);
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: var(--spacing-md);
+}
+
+.submitBtn:hover {
+    background-color: #F0C040;
+    /* Lighter gold */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.successMessage {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-gold);
+    border-radius: 4px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.successMessage h3 {
+    color: var(--color-gold);
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.successMessage p {
+    color: var(--color-text);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+    .row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+}
