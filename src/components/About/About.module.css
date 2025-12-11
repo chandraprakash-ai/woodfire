@@ -3,22 +3,25 @@
     position: relative;
     overflow: hidden;
     padding: 0;
-    /* Full width/height control */
 }
 
 .container {
     max-width: 1400px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    /* Desktop Base */
     gap: 0;
+    min-height: 700px;
 }
 
 .imageWrapper {
     width: 100%;
-    height: 400px;
+    height: 100%;
     position: relative;
     overflow: hidden;
+    order: 2;
+    /* Image on right for Desktop */
 }
 
 .image {
@@ -33,16 +36,19 @@
 }
 
 .content {
-    padding: var(--spacing-xl) var(--spacing-lg);
+    padding: var(--spacing-xxl);
+    /* Desktop Base */
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: var(--color-bg);
+    order: 1;
 }
 
 .title {
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: 4rem;
+    /* Desktop Base */
     color: var(--color-gold);
     margin-bottom: var(--spacing-md);
     position: relative;
@@ -61,6 +67,7 @@
 
 .text {
     font-size: 1.1rem;
+    /* Desktop Base */
     color: var(--color-text);
     margin-bottom: var(--spacing-lg);
     line-height: 1.8;
@@ -82,10 +89,12 @@
     font-weight: 500;
     color: var(--color-text);
     font-size: 1.1rem;
+    /* Desktop Base */
 }
 
 .icon {
     font-size: 1.5rem;
+    /* Desktop Base */
     color: var(--color-gold);
     display: flex;
     align-items: center;
@@ -97,25 +106,39 @@
     background-color: rgba(212, 175, 55, 0.05);
 }
 
-/* Desktop Styles */
-@media (min-width: 992px) {
+/* Tablet/Mobile Override */
+@media (max-width: 992px) {
     .container {
-        grid-template-columns: 1fr 1fr;
-        min-height: 700px;
+        grid-template-columns: 1fr;
+        min-height: auto;
     }
 
     .imageWrapper {
-        height: 100%;
-        order: 2;
-        /* Image on the right */
+        height: 300px;
+        order: 1;
+        /* Image on top */
     }
 
     .content {
-        padding: var(--spacing-xxl);
-        order: 1;
+        padding: var(--spacing-lg) var(--spacing-md);
+        order: 2;
     }
 
     .title {
-        font-size: 4rem;
+        font-size: 2.5rem;
+    }
+
+    .text {
+        font-size: 1rem;
+    }
+
+    .featureItem {
+        font-size: 1rem;
+    }
+
+    .icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.25rem;
     }
 }

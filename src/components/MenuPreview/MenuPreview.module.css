@@ -8,13 +8,15 @@
 .title {
     text-align: center;
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: 2.5rem;
+    /* Mobile font size */
     margin-bottom: var(--spacing-xl);
     color: var(--color-gold);
     position: relative;
     display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
 }
 
 .title::after {
@@ -36,7 +38,8 @@
 
 .card {
     position: relative;
-    height: 400px;
+    height: 300px;
+    /* Reduced height for mobile */
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid rgba(212, 175, 55, 0.2);
@@ -84,14 +87,14 @@
 
 .cardTitle {
     font-family: var(--font-heading);
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     color: var(--color-gold);
     margin-bottom: var(--spacing-xs);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .cardDesc {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--color-text);
     margin-bottom: var(--spacing-md);
     opacity: 0.9;
@@ -102,7 +105,7 @@
     display: inline-block;
     font-weight: 600;
     color: var(--color-accent-light);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     opacity: 0;
@@ -120,8 +123,28 @@
 }
 
 @media (min-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+
     .grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        height: 400px;
+    }
+
+    .cardTitle {
+        font-size: 1.75rem;
+    }
+
+    .cardDesc {
+        font-size: 1rem;
+    }
+
+    .link {
+        font-size: 0.9rem;
     }
 }
 

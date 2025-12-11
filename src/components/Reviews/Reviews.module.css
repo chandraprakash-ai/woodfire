@@ -7,13 +7,15 @@
 .title {
     text-align: center;
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: 2.5rem;
+    /* Mobile font size */
     margin-bottom: var(--spacing-xl);
     color: var(--color-gold);
     position: relative;
     display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
 }
 
 .title::after {
@@ -54,7 +56,8 @@
 }
 
 .quoteIcon {
-    font-size: 4rem;
+    font-size: 3rem;
+    /* Smaller icon on mobile */
     color: var(--color-gold);
     opacity: 0.1;
     position: absolute;
@@ -66,14 +69,14 @@
 
 .stars {
     color: var(--color-gold);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: var(--spacing-md);
     text-align: center;
 }
 
 .text {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-style: italic;
     color: var(--color-text);
     text-align: center;
@@ -91,8 +94,8 @@
 }
 
 .avatar {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--color-gold);
@@ -103,12 +106,37 @@
     font-weight: 600;
     color: var(--color-gold);
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     letter-spacing: 1px;
 }
 
 @media (min-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+
     .grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .quoteIcon {
+        font-size: 4rem;
+    }
+
+    .stars {
+        font-size: 1.2rem;
+    }
+
+    .text {
+        font-size: 1.25rem;
+    }
+
+    .avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .name {
+        font-size: 0.9rem;
     }
 }

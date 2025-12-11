@@ -8,13 +8,15 @@
 .title {
     text-align: center;
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: 2.5rem;
+    /* Mobile font size */
     margin-bottom: var(--spacing-xl);
     color: var(--color-gold);
     position: relative;
     display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
 }
 
 .title::after {
@@ -30,7 +32,7 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--spacing-sm);
     grid-auto-flow: dense;
 }
@@ -40,12 +42,14 @@
     overflow: hidden;
     border-radius: 2px;
     cursor: pointer;
+    height: 300px;
+    /* Fixed height for mobile items */
 }
 
-/* Masonry Effect: Some items span 2 columns or rows */
+/* Masonry Effect: Reset for mobile, all items 1x1 (or just full width) */
 .item:nth-child(1) {
-    grid-column: span 2;
-    grid-row: span 2;
+    grid-column: span 1;
+    grid-row: span 1;
 }
 
 .item:nth-child(4) {
@@ -97,15 +101,38 @@
     transform: translateY(0);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 480px) {
     .grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: var(--spacing-md);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .item:nth-child(1) {
         grid-column: span 2;
         grid-row: span 2;
+    }
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .item {
+        height: auto;
+        /* Let grid define height or aspect ratio */
+        aspect-ratio: 1;
+        /* Square items on desktop */
+    }
+
+    .item:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
+        aspect-ratio: auto;
     }
 
     .item:nth-child(2) {
@@ -120,6 +147,7 @@
 
     .item:nth-child(4) {
         grid-column: span 1;
-        grid-row: span 2;
+        grid-row: span 1;
+        aspect-ratio: auto;
     }
 }

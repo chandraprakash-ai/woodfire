@@ -15,7 +15,8 @@
 
 .title {
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: 2.5rem;
+    /* Mobile font size */
     color: var(--color-gold);
     margin-bottom: var(--spacing-xl);
     text-align: center;
@@ -30,7 +31,8 @@
 }
 
 .content {
-    text-align: left;
+    text-align: center;
+    /* Center text on mobile */
 }
 
 .infoBlock {
@@ -43,7 +45,7 @@
 
 .subtitle {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--color-text);
     margin-bottom: var(--spacing-xs);
 }
@@ -122,9 +124,21 @@
 }
 
 @media (min-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+
     .contentWrapper {
         grid-template-columns: 1fr 1fr;
         gap: var(--spacing-xxl);
+    }
+
+    .content {
+        text-align: left;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
     }
 
     .mapContainer {
