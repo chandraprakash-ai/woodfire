@@ -9,9 +9,9 @@ const Hero: React.FC = () => {
             <BackgroundEffects />
             <div className={`container ${styles.container}`}>
                 <div className={styles.content}>
-                    <h1 className={styles.heading}>Where flavor meets comfort.</h1>
+                    <h1 className={styles.heading}>Where flavor meets{'\u00A0'}comfort.</h1>
                     <p className={styles.subheading}>
-                        Artisan brews, wood-fired bites, and a cozy place to unwind in the heart of the city.
+                        Artisan brews, wood-fired bites, and a cozy place to unwind in the heart of the{'\u00A0'}city.
                     </p>
                     <div className={styles.actions}>
                         <a href="#menu" className={styles.primaryBtn}>View Menu</a>
